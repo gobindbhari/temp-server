@@ -20,4 +20,4 @@ jobs:
             cd /home/ubuntu/temp-server
             git fetch --all
             git reset --hard origin/main
-            pm2 restart all || echo "PM2 restart failed"
+            /home/ubuntu/.nvm/versions/node/v22.15.0/bin/pm2 restart all || echo "PM2 restart failed"
