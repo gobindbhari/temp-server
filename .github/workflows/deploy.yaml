@@ -18,5 +18,6 @@ jobs:
           key: ${{ secrets.TEST_2_EC2_KEY }}
           script: |
             cd /home/ubuntu/temp-server
-            git pull origin main
+            git fetch --all
+            git reset --hard origin/main
             pm2 restart all || echo "PM2 restart failed"
