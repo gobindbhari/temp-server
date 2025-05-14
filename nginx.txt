@@ -1,0 +1,20 @@
+
+events {
+            # Event directives...
+}
+
+http {
+            server {
+                            listen 80;
+                                    server_name ec2 - 13 - 233 - 83 - 177.ap - south - 1.compute.amazonaws.com;  # Corrected server_name
+
+                location / {
+                        proxy_pass http://localhost:8080;  # Forward requests to localhost:8080
+                                proxy_http_version 1.1;            # Ensure HTTP/ 1.1 is used
+                                                                                        proxy_set_header Upgrade $http_upgrade;   # Support WebSocket upgrade
+                                                                                                    proxy_set_header Connection 'upgrade';    # Support WebSocket connection
+                                                                                                                proxy_set_header Host $host;             # Forward original host header
+                                                                                                                            proxy_cache_bypass $http_upgrade;       # Disable caching for WebSocket connections
+                                                                                                                                    }
+}
+                                                                                                                                }
